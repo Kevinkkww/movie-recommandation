@@ -1,0 +1,94 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.redisData";
+option java_outer_classname = "redisDataProto";
+option objc_class_prefix = "COM";
+
+package redisData;
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc getMovie (MovieRequest) returns (MovieReply) {}
+  // Sends another greeting
+}
+message MovieRequest {
+  string userId=1;
+}
+message MovieReply{
+  string movieList=1;
+  string userDislike=2;
+  string userLike=3;
+  string movieMod=4;
+}
+message MovieModReply{
+  int32 movieId = 1;
+  string genres = 2;
+  string YEAR = 3;
+  double UPPER_STD = 4;
+  double LOWER_STD = 5;
+  double AVG_RATING = 6;
+  int32 VIEW_COUNT = 7;
+  int32 Thriller = 8;
+  int32 Documentary = 9;
+  int32 War = 10;
+  int32 Musical=11;
+  int32 Crime=12;
+  int32 Drama=13;
+  int32 Horror=14;
+  int32 Adventure=15;
+  int32 Children=16;
+  int32 Sci_Fi=17;
+  int32 Comedy=18;
+  int32 Mystery=19;
+  int32 Western=20;
+  int32 Film_Noir=21;
+  int32 Fantasy=22;
+  int32 Animation=23;
+  int32 Action=24;
+  int32 Romance=25;
+  int32 None=26;
+}
+message TotalUserDf{
+  int32 userId=1;
+  double War=2;
+  double Animation=3;
+  double Horror=4;
+  double Sci_Fi=5;
+  double Fantasy=6;
+  double Thriller=7;
+  double Crime=8;
+  double Mystery=9;
+  double Documentary=10;
+  double Children=11;
+  double Action=12;
+  double Adventure=13;
+  double Musical=14;
+  double Film_Noir=15;
+  double Drama=16;
+  double Romance=17;
+  double Comedy=18;
+  double Western=19;
+  double None=20;
+}
+message UserRecommendReply{
+  int32 userId=1;
+  int32 movieId_1=2;
+  int32 movieId_2=3;
+  int32 movieId_3=4;
+  int32 movieId_4=5;
+  int32 movieId_5=6;
+  int32 movieId_6=7;
+  int32 movieId_7=8;
+  int32 movieId_8=9;
+  int32 movieId_9=10;
+  int32 movieId_10=11;
+}
+message UserReply{
+  int32 user_id = 1;
+  repeated string genres = 2;
+  int32 quantity = 3;
+  float avg_gRating = 4;
+}
+

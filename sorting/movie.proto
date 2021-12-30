@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package redisData;
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc getMovie (MovieRequest) returns (MovieReply) {}
+  // Sends another greeting
+}
+message MovieRequest {
+  string userId=1;
+}
+message MovieReply{
+  string movieList=1;
+  string userDislike=2;
+  string userLike=3;
+  string movieMod=4;
+}

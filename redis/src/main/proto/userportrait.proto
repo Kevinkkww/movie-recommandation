@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.userPortrait";
+option java_outer_classname = "UserPortraitProto";
+option objc_class_prefix = "COM";
+
+package userPortrait;
+
+// The greeting service definition.
+service UserPortraitGreeter {
+  // Sends a greeting
+  rpc GetUserPortrait (UserPortraitRequest) returns (UserPortraitReply) {}
+}
+
+// The request message containing the user's name.
+message UserPortraitRequest {
+  string user_id = 1;  //用户编号
+  string session = 2; //绘画
+}
+
+
+
+// The response message containing the greetings
+message UserPortraitReply {
+  string user_id = 1;  // 用户编号
+  string genres = 2;  // 看过电影的种类
+  string movie_year_latest = 3;  //观看年代最久的电影
+  float min_rating = 4; // 最低打分
+  float max_rating = 5; // 最高打分
+  float frequency = 6;  // 一年看多少部电影
+  int32  quantity= 7;  // 看了多少部电影
+  string tags=8;  //发表过的评论
+  string recent_movie=9; // 最近看过的电影
+}

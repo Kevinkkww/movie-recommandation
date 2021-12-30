@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.moviePortrait";
+option java_outer_classname = "MoviePortrait";
+option objc_class_prefix = "HLW";
+
+package MoviePortrait;
+
+// The greeting service definition.
+service MoviePortraitGreeter {
+  // Sends a greeting
+  rpc GetMoviePortrait (MoviePortraitRequest) returns (MoviePortraitReply) {}
+}
+
+// The request message containing the user's name.
+message MoviePortraitRequest {
+
+  string movie_id = 1; // 电影编号
+  string session_id=2; //消息号
+}
+
+
+
+// The response message containing the greetings
+message MoviePortraitReply {
+  string movie_id = 1; // 编号
+  string name = 2;  // 名称
+  int32 year = 3; // 年代
+  string genres = 4;  // 种类
+  int32 total_view_quantity=5;  //总共观看次数
+  float frequency =6; // 访问的频率
+  int32 recent_view_quantity=7; //最近访问的总次数
+  float average_rating=8; //平均打分
+  float upper_quartile=9; //上四分位打分
+  float lower_quartile=10;  //下四分位打分
+  string tags=11; //电影的评论
+}
